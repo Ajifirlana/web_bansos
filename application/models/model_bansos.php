@@ -18,5 +18,11 @@ class Model_bansos extends CI_Model{
 			
 			return $this->db->get()->result();
 		}
+    public function get($username){
+        $this->db->where('username', $username); 
+        $result = $this->db->get('user')->row(); 
+
+        return $result;
+    }
 }
 ?>

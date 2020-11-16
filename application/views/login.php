@@ -90,33 +90,25 @@
             <div id="card-content">
 
   <div id="card-title">
-   
-              <?php echo form_open('bansos/search'); ?>
+
+  
+              <?php echo form_open('dashboard/login'); ?>
        
               
                 <div class="form-group">
-               <label for="signin-password" class="control-label sr-only" id="id">Pilih ID</label>
-               <br>
-                  <select class="form-control" name="id_kat" id="id_kat" onchange="return autofill();">
-                        <option value="">No Selected</option>
-                        <?php foreach($record->result() as $b):?>
-                        <option value="<?php echo $b->id_kat;?>"><?php echo $b->id_kat;?></option>
-                        <?php endforeach;?>
-                    </select>
+               <label for="signin-password" class="control-label sr-only" id="id">Username</label>
+               <input type="username" name="username" required="">
                 </div>
                 <br>
                 <div class="form-group">
-                  <label for="signin-password" class="control-label sr-only" id="nama"></label>
+                  <label for="signin-password" class="control-label sr-only" id="username">Password</label>
                    <br>
-        <input type="number" name="nik">
+        <input type="password" name="password">
                 </div>
                 <br>
-                <div class="form-group">
-                <label id="alamat"></label><br>
-        <input type="text">
-      </div>
+             
       <br>
-                <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Cari">
+                <input type="submit" name="submit" class="btn btn-primary btn-lg btn-block" value="Login">
                 
             <?php echo form_close() ?>
       
@@ -126,40 +118,4 @@
                   <a href="https://caramengatasimasalahmu.blogspot.com/2020/11/aplikasi-bansos-sederhana.html" target="_blank">© 2020 Developer</a>
                 </div>      </div>
           
-          
-  
-
-<script src="<?php echo base_url(); ?>assets/ajax.js"></script>
-
-
-<!--<datalist id="data_mahasiswa">
-    <?php
-    foreach ($record->result() as $b)
-    {
-        echo "<option value='$b->id_kat'>$b->id_kat</option>";
-    }
-    ?>
-    
-</datalist>-->   
-<script>
-    function autofill(){
-        var id_kat =document.getElementById('id_kat').value;
-        $.ajax({
-                       url:"<?php echo base_url();?>index.php/bansos/cari",
-                       data:'&id_kat='+id_kat,
-                       success:function(data){
-                           var hasil = JSON.parse(data);  
-					
-			$.each(hasil, function(key,val){ 
-				
-			   document.getElementById('id_kat').value=val.id_kat;
-                           document.getElementById('nama').innerHTML = val.nama;
-                           document.getElementById('alamat').innerHTML = val.alamat;
-                             
-					
-				});
-			}
-                   });
-                  
-    }
-</script>
+         
