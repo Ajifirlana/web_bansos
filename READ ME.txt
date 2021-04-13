@@ -1,0 +1,19 @@
+
+====---//INSTALASI SOURCE CODE\\---====
+
+-Ekstrak source code-nya
+-Copy ke localhost / host
+-jika pakai xampp copy ke folder htdocs
+-buat database baru di phpmyadmin
+-import file sql ke database baru tadi
+-url admin tambahkan "c_login" pada url
+
+
+=====-----/////FAQ ERROR\\\\\-----=====
+Akun Administrator
+Nama pengguna : admindesa
+Kata sandi : admin
+
+Akun Pengelola Data
+Nama pengguna : pengelola
+Kata sandi : 12345
